@@ -26,7 +26,7 @@ consign({
 // consign()
   .include('./config/middlewares/globals.js')
   .then('routes')
-  .then('app')
+  // .then('app')
   .into(app)
 
 

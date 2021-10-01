@@ -12,7 +12,7 @@ module.exports = app => {
             res.status(200).json(data)
         } else {
             res.status(404).json({
-                message: "Não foi encontrado nenhum resultado nessa consulta."
+                message: "No results were found for this query."
             })
         }
       })
@@ -34,7 +34,7 @@ module.exports = app => {
             res.status(200).json(data)
         } else {
             res.status(404).json({
-                message: "Não foi encontrado nenhum resultado nessa consulta."
+                message: "No results were found for this query."
             })
         }
       })
@@ -53,11 +53,11 @@ module.exports = app => {
     })
       .then(data => {
         console.log(data)
-        res.status(201).json({message: "Os dados foram cadastrados!"})
+        res.status(201).json({message: "Data have been registered!"})
       })
       .catch(err => {
         console.log(err)
-        res.status(400).json({message: "Oops! ocorreu um erro ao tentar salvar o registro!", exception: err})
+        res.status(400).json({message: "Oops! an error occurred while trying to save the record!", exception: err})
       })
   })
 
@@ -70,15 +70,11 @@ module.exports = app => {
       .del()
       .then(data => {
         console.log(data)
-        if (data === 1) {
-          res.status(200).json({ message: "Removida com sucesso!" })
-        } else {
-          res.status(204)
-        }
+        res.status(200).json({ message: "Successfully removed!" })
       })
       .catch(err => {
         console.log(err)
-        res.status(400).json({message: "Oops! ocorreu um erro ao tentar apagar este registro!", exception: err})
+        res.status(400).json({message: "Oops! an error occurred while trying to delete this record!", exception: err})
       })
   })
 }
